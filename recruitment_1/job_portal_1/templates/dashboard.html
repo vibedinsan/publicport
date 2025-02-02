@@ -1,0 +1,19 @@
+<h2>Welcome {{ current_user.email }}</h2>
+<a href="{{ url_for('logout') }}">Logout</a>
+
+{% if current_user.user_type == 'employer' %}
+    <h3>Your Job Listings</h3>
+    <a href="{{ url_for('post_job') }}" class="btn btn-primary">Post a Job</a>
+{% else %}
+    <h3>Available Jobs</h3>
+{% endif %}
+
+<ul>
+    {% for job in jobs %}
+        <li>
+            <h4>{{ job.title }}</h4>
+            <p>{{ job.description }}</p>
+            <p><strong>Company:</strong> {{ job.company }}</p>
+        </li>
+    {% endfor %}
+</ul>

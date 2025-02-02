@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <script>
+        function openRegisterPopup() {
+            // Get the width and height of the screen
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+    
+            // Set the pop-up window's size
+            var popupWidth = 500;
+            var popupHeight = 300;
+    
+            // Calculate the position to center the pop-up window
+            var left = (screenWidth - popupWidth) / 2;
+            var top = (screenHeight - popupHeight) / 2;
+    
+            // Open the window at the center of the screen
+            window.open("{{ url_for('register') }}", 
+                        "Register Window", 
+                        "width=" + popupWidth + ",height=" + popupHeight + 
+                        ",left=" + left + ",top=" + top + 
+                        ",scrollbars=yes");
+        }
+                      
+      
+
+
+
+   
+        function openApplyPopup() {
+            // Get the width and height of the screen
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+    
+            // Set the pop-up window's size
+            var popupWidth = 500;
+            var popupHeight = 400;
+    
+            // Calculate the position to center the pop-up window
+            var left = (screenWidth - popupWidth) / 2;
+            var top = (screenHeight - popupHeight) / 2;
+    
+            // Open the apply window at the center
+            window.open("{{ url_for('apply') }}", 
+                        "Apply Window", 
+                        "width=" + popupWidth + ",height=" + popupHeight + 
+                        ",left=" + left + ",top=" + top + ",scrollbars=yes");
+        }
+    </script>
+
+
+
+
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Job Portal</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+                    <!-- Register link opens a pop-up window -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="openRegisterPopup()">Register</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Find Your Dream Job</h1>
+        <p>Connecting job seekers with top companies</p>
+    </header>
+
+<!-- Job Listings -->
+<div class="container mt-4">
+    <h2 class="text-center">Available Jobs</h2>
+    <div class="row">
+        <!-- Job 1 -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Software Engineer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Tech Company</h6>
+                    <p class="card-text">This is a job description snippet...</p>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openApplyPopup()">Apply Now </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Mechanical Engineer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Tech Company</h6>
+                    <p class="card-text">This is a job description snippet...</p>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openApplyPopup()">Apply Now </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Data Analyst</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Analytics Company</h6>
+                    <p class="card-text">This is a job description snippet...</p>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openApplyPopup()">Apply Now </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Tech Company</h6>
+                    <p class="card-text">This is a job description snippet...</p>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openApplyPopup()">Apply Now </a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        &copy; 2025 Job Portal | All Rights Reserved
+    </footer>
+
+</body>
+</html>
