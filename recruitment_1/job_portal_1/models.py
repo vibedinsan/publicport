@@ -15,3 +15,4 @@ class Job(db.Model):
     description = db.Column(db.Text, nullable=False)
     company = db.Column(db.String(100), nullable=False)
     posted_by = db.Column(db.Integer, db.ForeignKey('user.id'))
+    
